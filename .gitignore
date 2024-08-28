@@ -18,6 +18,7 @@ Thumbs.db
 
 # Ignore environment variables
 .env
+*.env.local
 
 # Ignore compiled files
 *.o
@@ -26,3 +27,6 @@ Thumbs.db
 
 # Ignore personal files
 *.swp
+
+# Ignore public directory if it contains generated files
+public/
