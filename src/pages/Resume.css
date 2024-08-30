@@ -1,0 +1,40 @@
+.resume {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow-y: auto; /* Add this line to allow vertical scrolling */
+    max-height: calc(100vh - 160px); /* Adjust height to fit within the viewport */
+  }  
+  .resume h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .resume-link {
+    display: block;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #61dafb;
+    text-decoration: none;
+    font-size: 1.2em;
+  }
+  
+  .resume-link:hover {
+    text-decoration: underline;
+  }
+  
+  .resume h3 {
+    margin-bottom: 10px;
+  }
+  
+  .resume ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .resume li {
+    margin-bottom: 5px;
+  }

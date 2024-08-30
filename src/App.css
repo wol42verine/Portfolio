@@ -28,6 +28,8 @@
 
 .App-content {
   padding: 20px;
+  overflow-y: auto; /* Add this line to allow vertical scrolling */
+  max-height: calc(100vh - 160px); /* Adjust height to fit within the viewport */
 }
 
 .App-footer {
