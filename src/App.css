@@ -1,5 +1,8 @@
 .App {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 .App-header {
@@ -27,18 +30,30 @@
 }
 
 .App-content {
+  flex: 1;
   padding: 20px;
-  overflow-y: auto; /* Add this line to allow vertical scrolling */
-  max-height: calc(100vh - 160px); /* Adjust height to fit within the viewport */
+  overflow-y: auto;
 }
 
 .App-footer {
   background-color: #282c34;
   padding: 10px;
   color: white;
-  position: fixed;
-  width: 100%;
-  bottom: 0;
+  text-align: center;
+}
+
+.footer-links {
+  margin-top: 10px;
+}
+
+.footer-links a {
+  color: #61dafb;
+  text-decoration: none;
+  margin: 0 5px;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
 }
 
 a {

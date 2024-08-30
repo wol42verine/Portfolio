@@ -17,7 +17,7 @@ function Resume() {
 
   return (
     <div className="resume">
-      <h2>Resume</h2>
+      {/* <h2>Resume</h2> */}
       <a href="/path/to/your/resume.pdf" download className="resume-link">
         Download Resume
       </a>
