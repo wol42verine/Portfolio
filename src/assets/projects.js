@@ -1,25 +1,24 @@
 const projects = [
-    //Add projects here
   {
-    title: 'App 1',
-    imageUrl: 'public\images\logo192.png',
+    title: 'Gardening Scheduler',
+    imageUrl: '/images/github-mark.png', 
     alt: 'app 1',
-    deployedUrl: 'https://deployed-app1.com',
-    repoUrl: 'https://github.com/username/app1'
+    deployedUrl: 'https://wol42verine.github.io/Project-1/',
+    repoUrl: 'https://github.com/wol42verine/Gardening-Scheduler'
   },
   {
-    title: 'App 2',
-    imageUrl: 'public\images\logo192.png',
+    title: 'Weather Dashboard',
+    imageUrl: '/images/github-mark.png', 
     alt: 'app 2',
-    deployedUrl: 'https://deployed-app2.com',
-    repoUrl: 'https://github.com/username/app2'
+    deployedUrl: 'https://wol42verine.github.io/Weather-Dashboard/',
+    repoUrl: 'https://github.com/wol42verine/Weather-Dashboard'
   },
   {
-    title: 'App 3',
-    imageUrl: 'public\images\logo192.png',
+    title: 'Employee Management CLI',
+    imageUrl: '/images/github-mark.png', 
     alt: 'app 3',
-    deployedUrl: 'https://deployed-app3.com',
-    repoUrl: 'https://github.com/username/app3'
+    deployedUrl: 'https://github.com/wol42verine/12-Challenge',
+    repoUrl: 'https://github.com/wol42verine/12-Challenge'
   },
 ];
 

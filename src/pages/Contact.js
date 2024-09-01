@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import emailjs from 'emailjs-com';
 import './Contact.css';
 
 function Contact() {
@@ -8,11 +9,7 @@ function Contact() {
     message: ''
   });
 
-  const [errors, setErrors] = useState({
-    name: '',
-    email: '',
-    message: ''
-  });
+  const [error, setError] = useState('');
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -22,28 +19,32 @@ function Contact() {
     });
   };
 
-  const handleBlur = (e) => {
-    const { name, value } = e.target;
-    let error = '';
-    if (!value) {
-      error = `${name.charAt(0).toUpperCase() + name.slice(1)} is required`;
-    } else if (name === 'email' && !/\S+@\S+\.\S+/.test(value)) {
-      error = 'Invalid email address';
-    }
-    setErrors({
-      ...errors,
-      [name]: error
-    });
-  };
-
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission
+    if (!formData.name || !formData.email || !formData.message) {
+      setError('All fields are required.');
+      return;
+    }
+
+    emailjs.sendForm('service_c98oxkc', 'template_iwn7vur', e.target, 'Ba0Ift13TJz8jm3li')
+      .then((result) => {
+        console.log(result.text);
+        alert('Message sent successfully!');
+        setFormData({
+          name: '',
+          email: '',
+          message: ''
+        });
+        setError('');
+      }, (error) => {
+        console.error('EmailJS Error:', error.text);
+        alert('Failed to send message. Please try again later.');
+      });
   };
 
   return (
     <div className="contact">
-      {/* <h2>Contact</h2> */}
+      <h2>Contact</h2>
       <form onSubmit={handleSubmit}>
         <div className="form-group">
           <label htmlFor="name">Name</label>
@@ -53,9 +54,8 @@ function Contact() {
             name="name"
             value={formData.name}
             onChange={handleChange}
-            onBlur={handleBlur}
+            aria-label="Name"
           />
-          {errors.name && <span className="error">{errors.name}</span>}
         </div>
         <div className="form-group">
           <label htmlFor="email">Email</label>
@@ -65,9 +65,8 @@ function Contact() {
             name="email"
             value={formData.email}
             onChange={handleChange}
-            onBlur={handleBlur}
+            aria-label="Email"
           />
-          {errors.email && <span className="error">{errors.email}</span>}
         </div>
         <div className="form-group">
           <label htmlFor="message">Message</label>
@@ -76,11 +75,11 @@ function Contact() {
             name="message"
             value={formData.message}
             onChange={handleChange}
-            onBlur={handleBlur}
-          />
-          {errors.message && <span className="error">{errors.message}</span>}
+            aria-label="Message"
+          ></textarea>
         </div>
-        <button type="submit">Submit</button>
+        {error && <p className="error">{error}</p>}
+        <button type="submit">Send</button>
       </form>
     </div>
   );
