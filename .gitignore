@@ -29,4 +29,4 @@ Thumbs.db
 *.swp
 
 # Ignore public directory if it contains generated files
-public/
+# public/
