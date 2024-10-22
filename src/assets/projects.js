@@ -3,7 +3,7 @@ const projects = [
     title: 'Gardening Scheduler',
     imageUrl: '/images/github-mark.png', 
     alt: 'app 1',
-    deployedUrl: 'https://wol42verine.github.io/Project-1/',
+    deployedUrl: 'https://wol42verine.github.io/Gardening-Scheduler/',
     repoUrl: 'https://github.com/wol42verine/Gardening-Scheduler'
   },
   {
